@@ -1,0 +1,26 @@
+{
+  "name": "@wang/utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "libs/index.umd.js",
+  "module": "es/index.js",
+  "unpack": "libs/index.min.js",
+  "files": [
+    "es",
+    "libs"
+  ],
+  "homepage": "https://github.com/wangguanl",
+  "author": {
+    "name": "Mr.Wang",
+    "email": "17600980516@163.com",
+    "url": "https://github.com/wangguanl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangguanl"
+  },
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  }
+}
