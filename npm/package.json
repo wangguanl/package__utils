@@ -1,6 +1,6 @@
 {
-  "name": "@wang/utils",
-  "version": "1.0.0",
+  "name": "wgl-utils",
+  "version": "1.0.5",
   "description": "",
   "main": "libs/index.umd.js",
   "module": "es/index.js",
@@ -9,7 +9,7 @@
     "es",
     "libs"
   ],
-  "homepage": "https://github.com/wangguanl",
+  "homepage": "https://github.com/wangguanl/page__package-utils",
   "author": {
     "name": "Mr.Wang",
     "email": "17600980516@163.com",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wangguanl"
+    "url": "https://github.com/wangguanl/package__utils"
   },
   "license": "ISC",
   "publishConfig": {

@@ -1,8 +1,6 @@
 const path = require('path');
 const BaseSrc = path.join(__dirname, '../../src/');
 
-// @wang/
-const libraryName = 'utils';
 
 module.exports = {
   mode: 'production',

@@ -7,19 +7,18 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- <script src="../dist/lib/index.js"></script>
+    <!-- <script src="../dist/libs/index.umd.js"></script>
     <script>
-      console.log(lib.unique())
+      console.log(utils.unique())
     </script> -->
-    <!-- <script src="../dist/umd/index.js"></script>
+    <!-- <script src="../dist/libs/index.min.js"></script>
     <script>
-      console.log(umd.unique());
+      console.log(utils.unique());
     </script> -->
 
     <script type="module">
       import { unique, test, a } from '../dist/es/index.js';
-      console.log(unique(), test(123123));
-      console.log(a);
+      console.log(unique(), test(123123), a);
     </script>
   </body>
 </html>

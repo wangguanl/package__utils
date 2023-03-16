@@ -4,7 +4,6 @@ const path = require('path'),
   commonConfig = require('./webpack.common');
 const BaseSrc = path.join(__dirname, '../../src/');
 
-console.log(path.resolve(BaseSrc, '**'));
 module.exports = merge(commonConfig, {
   mode: 'production',
   experiments: {
@@ -24,7 +23,6 @@ module.exports = merge(commonConfig, {
         };
       }
     });
-    console.log(entry);
     return entry;
   })(),
   output: {

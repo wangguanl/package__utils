@@ -3,14 +3,13 @@ const path = require('path'),
   commonConfig = require('./webpack.common');
 const BaseSrc = path.join(__dirname, '../../src/');
 
-console.log(path.resolve(BaseSrc, '**'));
 // @wang/
 const libraryName = 'utils';
 module.exports = merge(commonConfig, {
   mode: 'production',
   entry: {
     umd: {
-      import: './src/index.js',
+      import: path.resolve(BaseSrc, 'index.js'),
       library: {
         name: libraryName,
         type: 'umd',
@@ -18,7 +17,7 @@ module.exports = merge(commonConfig, {
       },
     },
     min: {
-      import: './src/index.js',
+      import: path.resolve(BaseSrc, 'index.js'),
       library: {
         name: libraryName,
         type: 'var',
