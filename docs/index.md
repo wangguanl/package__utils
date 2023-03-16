@@ -3,23 +3,16 @@
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "NPM Package"
+  text: "Utils"
+  tagline: wgl-utils
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 安装
+      link: /examples/install
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 用例
+      link: /examples/
 
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
