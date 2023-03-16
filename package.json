@@ -6,6 +6,8 @@
   "private": true,
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config ./scripts/webpack.build.js",
+    "deploy": "cd docs && deploy.sh",
+    "docs": "cd docs && npm run dev",
     "pub": "npm run build && cd dist && npm publish",
     "pub:patch": "cd npm && npm version patch && cd ../ && npm run pub",
     "pub:minor": "cd npm && npm version minor && cd ../ && npm run pub",
