@@ -1,6 +1,15 @@
 import { defineConfig } from 'vitepress';
-
-// https://vitepress.dev/reference/site-config
+import fg from 'fast-glob';
+const examples = fg
+  .sync(['./examples/*.md'])
+  .filter(url => url !== './examples/install.md')
+  .map(url => {
+    const text = url.replace('./examples/', '').split('.')[0];
+    return {
+      text,
+      link: '/examples/' + text,
+    };
+  });
 export default defineConfig(({ command }) => ({
   lang: 'zh-cmn-Hans',
   base: command === 'build' ? '/page__package-utils/' : '',
@@ -20,7 +29,6 @@ export default defineConfig(({ command }) => ({
     returnToTopLabel: '返回顶部',
     sidebarMenuLabel: '菜单',
 
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
       { text: '用例', link: '/examples/' },
@@ -33,10 +41,7 @@ export default defineConfig(({ command }) => ({
       },
       {
         text: '用例',
-        items: [
-          { text: 'index', link: '/examples/index' },
-          { text: 'unique', link: '/examples/unique' },
-        ],
+        items: examples,
       },
     ],
 

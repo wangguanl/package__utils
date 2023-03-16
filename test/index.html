@@ -17,8 +17,29 @@
     </script> -->
 
     <script type="module">
-      import { unique, test, a } from '../dist/es/index.js';
-      console.log(unique(), test(123123), a);
+      import { unique, deepMerge } from '../dist/es/index.js';
+      const obj = {
+          a: 1,
+          b: 2,
+          c: [3, 4, { a: 1, b: 2 }],
+          d: {
+            s: 1,
+            d: 2,
+            a: 22,
+          },
+        },
+        obj2 = {
+          a: 3,
+          b: 4,
+          c: [5, 6, 7],
+          d: {
+            s: 4,
+            d: 6,
+            q: 2,
+          },
+        };
+      const mergeObj = deepMerge(obj, obj2);
+      console.log(mergeObj);
     </script>
   </body>
 </html>

@@ -1,11 +1,12 @@
-// export { unique as default } from './unique';
 export { default as unique } from './unique';
-export { default as test } from './test';
-export * from './test';
-// export { default as test } from './test'
-// import unique from './unique'
-// console.log(unique());
-// unique()
-// import test from './test'
-// console.log(test('gsaga'));
-console.log(123);
+export { default as verifyVar } from './verifyVar';
+export { default as validation } from './validation';
+export { default as deepCopy } from './deepCopy';
+export { default as deepMerge } from './deepMerge';
+export { default as recursionSegments } from './recursionSegments';
+export { default as isArrayNested } from './isArrayNested';
+export * from './formatDate';
+export * from './debounce';
+export * from './parseUrl';
+export * from './hump';
+export * from './rem';

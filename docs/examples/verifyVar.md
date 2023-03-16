@@ -4,8 +4,8 @@
 ::: code-group
 
 ```js  [ESModule]
-  import { unique } from 'wgl-utils/es/index.js';
-  // import unique from 'wgl-utils/es/unique.js';
+  // import { unique } from 'wgl-utils/es/index.js';
+  import unique from 'wgl-utils/es/unique.js';
   console.log(unique());
 ```
 
@@ -16,7 +16,7 @@
 
 :::
 
-## `Browser`
+## Browser
 ::: code-group
 
 ```html  [ESModule]
