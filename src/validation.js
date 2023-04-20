@@ -16,12 +16,13 @@ export default (() => {
      * 可验证类型： 数组、对象、字符串
      */
     empty: data =>
-      (Array.isArray(data) && data.length > 0) ||
-      (Object.prototype.toString.call(data) === '[object Object]' &&
-        JSON.stringify(data) !== '{}') ||
-      typeof data === 'string'
-        ? data.length > 0
-        : (data + '').length > 0,
+      data !== null &&
+      data !== undefined &&
+      (!Array.isArray(data) || data.length !== 0) &&
+      (Object.prototype.toString.call(data) !== '[object Object]' ||
+        JSON.stringify(data) !== '{}') &&
+      (typeof data !== 'string' || data.replace(/\s+/g, '').length !== 0) &&
+      !(typeof data !== 'number' && !data),
 
     // 校验是否以http或https开头的url
     url: data => /^(http|https):/.test(data),
@@ -41,10 +42,6 @@ export default (() => {
 
     placeholder: () => true,
 
-    /**
-     * @param {string} email
-     * @returns {Boolean}
-     */
     email: data =>
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
         data
@@ -57,10 +54,10 @@ export default (() => {
    **/
   const CacheData =
     data =>
-    (rule, { type, validation, success, error }) => {
+    (field, { type, validation, success, error }) => {
       const pass = validation
-        ? validation(data[rule])
-        : Rules[type](data[rule]);
+        ? validation(data[field])
+        : Rules[type](data[field]);
       pass ? success && success() : error && error();
       return pass;
     };

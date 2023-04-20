@@ -1,6 +1,6 @@
 {
   "name": "wgl-utils",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "libs/index.umd.js",
   "module": "es/index.js",
