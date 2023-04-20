@@ -22,23 +22,20 @@ obj2 = {
     q: 2,
   },
 };
+const mergeObj = deepMerge(obj, obj2);
 ```
 
 ## `Framework`
 ::: code-group
 
 ```js  [ESModule]
-  import { deepMerge } from 'wgl-utils/es/index.js';
-  // import deepMerge from 'wgl-utils/es/deepMerge.js';
-  
-  const mergeObj = deepMerge(obj, obj2);
-  console.log(mergeObj);
+import { deepMerge } from 'wgl-utils/es/index.js';
+// import deepMerge from 'wgl-utils/es/deepMerge.js';
 ```
 
 ```js  [UMD]
-  import utils from 'wgl-utils';
-  const mergeObj = utils.deepMerge(obj, obj2);
-  console.log(mergeObj);
+import utils from 'wgl-utils';
+const mergeObj = utils.deepMerge(obj, obj2);
 ```
 
 :::
@@ -50,21 +47,18 @@ obj2 = {
 <script type="module">
   import { deepMerge } from 'wgl-utils/es/index.js';
   const mergeObj = deepMerge(obj,obj2);
-  console.log(mergeObj);
 </script>
 ```
 ```html  [UMD]
 <script src="wgl-utils/libs/index.umd.js"></script>
 <script>
   const mergeObj = utils.deepMerge(obj, obj2);
-  console.log(mergeObj);
 </script>
 ```
 ```html  [var]
 <script src="wgl-utils/libs/index.min.js"></script>
 <script>
   const mergeObj = utils.deepMerge(obj, obj2);
-  console.log(mergeObj);
 </script>
 ```
 :::

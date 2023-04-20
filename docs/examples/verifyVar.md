@@ -1,17 +1,33 @@
-# `unique` 创建唯一值: `String`
+# `verifyVar` 检测类型
+## 示例
+```js
+/*
+  检测类型
+  variable, 返回当前variable参数类型
+  [, isType], 判断variable参数类型
+  来自用户传输的内容都必须验证类型
+ */
+verifyVar(1); // number
+verifyVar('string'); // string
+verifyVar([]); // array
+verifyVar([], 'array'); // true
+verifyVar({}); // object
+verifyVar({}, 'object'); // true
+
+```
 
 ## `Framework`
 ::: code-group
 
 ```js  [ESModule]
-  // import { unique } from 'wgl-utils/es/index.js';
-  import unique from 'wgl-utils/es/unique.js';
-  console.log(unique());
+import { verifyVar } from 'wgl-utils/es/index.js';
+// import verifyVar from 'wgl-utils/es/verifyVar.js';
+verifyVar()
 ```
 
 ```js  [UMD]
-  import utils from 'wgl-utils';
-  console.log(utils.unique());
+import utils from 'wgl-utils';
+utils.verifyVar()
 ```
 
 :::
@@ -21,33 +37,34 @@
 
 ```html  [ESModule]
 <script type="module">
-  import { unique } from 'wgl-utils/es/index.js';
-  console.log(unique());
+  import { verifyVar } from 'wgl-utils/es/index.js';
+  // import verifyVar from 'wgl-utils/es/verifyVar.js';
+  verifyVar()
 </script>
 ```
 ```html  [UMD]
 <script src="wgl-utils/libs/index.umd.js"></script>
 <script>
-  console.log(utils.unique())
+  utils.verifyVar()
 </script>
 ```
 ```html  [var]
 <script src="wgl-utils/libs/index.min.js"></script>
 <script>
-  console.log(utils.unique())
+  utils.verifyVar()
 </script>
 ```
 :::
 
 
-##  `unique.js` 源码
+##  `verifyVar.js` 源码
 ::: code-group
 
-```js  [src/unique.js]
-<!-- @include: ../../src/unique.js -->
+```js  [src/verifyVar.js]
+<!-- @include: ../../src/verifyVar.js -->
 ```
 
-```js  [dist/es/unique.js]
-<!-- @include: ../../dist/es/unique.js -->
+```js  [dist/es/verifyVar.js]
+<!-- @include: ../../dist/es/verifyVar.js -->
 ```
 :::

@@ -1,7 +1,16 @@
-/*
- * 验证类型：身份证、邮箱、金额、数字、中文
- */
-const Rules = {
+/**
+ * @overview 根据校验规则校验数据，执行传入的回调函数，返回校验结果
+ * @author Mr.Wang
+ * @version 1.0
+ **/
+/**
+ * @method 验证类型
+ * @param { Object | required } rules - 校验规则.
+ * @param { Array | required } data - 数据.
+ * @return { Boolean | rules[key] } 返回值描述: 如果校验成功则返回 true, 校验失败返回校验的规则
+ **/
+export default (() => {
+  const Rules = {
     /*
      * 验证非空验证
      * 可验证类型： 数组、对象、字符串
@@ -14,7 +23,7 @@ const Rules = {
         ? data.length > 0
         : (data + '').length > 0,
 
-    // 校验 url
+    // 校验是否以http或https开头的url
     url: data => /^(http|https):/.test(data),
 
     // 钱
@@ -22,6 +31,8 @@ const Rules = {
       /(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/.test(
         data
       ),
+    // 纯英文
+    alphabets: data => /^[A-Za-z]+$/.test(data),
 
     // 浮点数
     float: data => /^-?[1-9]\d*\.\d+$|^-?0\.\d+$|^-?[1-9]\d*$|^0$/.test(data),
@@ -34,12 +45,17 @@ const Rules = {
      * @param {string} email
      * @returns {Boolean}
      */
-    validEmail: data =>
+    email: data =>
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
         data
       ),
-  },
-  CacheData =
+  };
+  /**
+   * @method 传入一个公用data，返回一个可执行函数
+   * @param { Object | required } data - 数据.
+   * @return { Function }
+   **/
+  const CacheData =
     data =>
     (rule, { type, validation, success, error }) => {
       const pass = validation
@@ -48,20 +64,23 @@ const Rules = {
       pass ? success && success() : error && error();
       return pass;
     };
-export default (rules, data) => {
-  const Validation = CacheData(data);
-  for (let rule in rules) {
-    if (Array.isArray(rules[rule])) {
-      for (let i = 0; i < rules[rule].length; i++) {
-        if (!Validation(rule, rules[rule][i])) {
-          return false;
+  return (rules, data) => {
+    const Validation = CacheData(data);
+    for (let field in rules) {
+      // 多个校验规则
+      if (Array.isArray(rules[field])) {
+        for (let i = 0; i < rules[field].length; i++) {
+          if (!Validation(field, rules[field][i])) {
+            return rules[field][i];
+          }
+        }
+      } else {
+        // 单个校验规则
+        if (!Validation(field, rules[field])) {
+          return rules[field];
         }
       }
-    } else {
-      if (!Validation(rule, rules[rule])) {
-        return false;
-      }
     }
-  }
-  return true;
-};
+    return true;
+  };
+})();

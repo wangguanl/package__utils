@@ -28,10 +28,28 @@ export default defineConfig(({ command }) => ({
     },
     returnToTopLabel: '返回顶部',
     sidebarMenuLabel: '菜单',
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/wangguanl/package__utils' },
+      // { icon: 'github', link: 'https://github.com/wangguanl' },
+    ],
 
     nav: [
-      { text: '首页', link: '/' },
       { text: '用例', link: '/examples/' },
+      {
+        text: '插件',
+        // link: 'https://github.com/wangguanl/package__plugins', // 代码仓库
+        link: 'https://wangguanl.github.io/page__package-plugins/', // 文档
+      },
+      {
+        text: '组件',
+        // link: 'https://github.com/wangguanl/package__components', // 代码仓库
+        link: 'https://wangguanl.github.io/page__package-components/', // 文档
+      },
+      {
+        text: '样式',
+        link: 'https://github.com/wangguanl/package__css', // 代码仓库
+        // link: '', // 文档
+      },
     ],
 
     sidebar: [
@@ -40,13 +58,13 @@ export default defineConfig(({ command }) => ({
         link: '/examples/install',
       },
       {
+        text: '更新依赖',
+        link: 'https://npmmirror.com/sync/wgl-utils',
+      },
+      {
         text: '用例',
         items: examples,
       },
-    ],
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/wangguanl/package__utils' },
     ],
   },
 }));

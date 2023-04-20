@@ -1,27 +1,26 @@
 # `debounce` 防抖节流
+## 示例
+```js
+debounce(() => {
+  console.log(123)
+}, 200);
+throttle(() => {
+  console.log(123)
+}, 200);
+```
 
 ## `Framework`
 ::: code-group
 
 ```js  [ESModule]
-  import { debounce, throttle } from 'wgl-utils/es/index.js';
-  // import debounce from 'wgl-utils/es/debounce.js';
-  debounce(() => {
-    console.log(123)
-  }, 200);
-  throttle(() => {
-    console.log(123)
-  }, 200);
+import { debounce, throttle } from 'wgl-utils/es/index.js';
+// import { debounce, throttle } from 'wgl-utils/es/debounce.js';
 ```
 
 ```js  [UMD]
-  import utils from 'wgl-utils';
-  utils.debounce(() => {
-    console.log(123)
-  }, 200);
-  utils.throttle(() => {
-    console.log(123)
-  }, 200);
+import utils from 'wgl-utils';
+utils.debounce();
+utils.throttle();
 ```
 
 :::
@@ -32,34 +31,21 @@
 ```html  [ESModule]
 <script type="module">
   import { debounce, throttle } from 'wgl-utils/es/index.js';
-  debounce(() => {
-    console.log(123)
-  }, 200);
-  throttle(() => {
-    console.log(123)
-  }, 200);
+  // import { debounce, throttle } from 'wgl-utils/es/debounce.js';
 </script>
 ```
 ```html  [UMD]
 <script src="wgl-utils/libs/index.umd.js"></script>
 <script>
-  utils.debounce(() => {
-    console.log(123)
-  }, 200);
-  utils.throttle(() => {
-    console.log(123)
-  }, 200);
+  utils.debounce();
+  utils.throttle();
 </script>
 ```
 ```html  [var]
 <script src="wgl-utils/libs/index.min.js"></script>
 <script>
-  utils.debounce(() => {
-    console.log(123)
-  }, 200);
-  utils.throttle(() => {
-    console.log(123)
-  }, 200);
+  utils.debounce();
+  utils.throttle();
 </script>
 ```
 :::

@@ -4,8 +4,9 @@ layout: home
 
 hero:
   name: "NPM Package"
-  text: "Utils"
-  tagline: wgl-utils
+  text: "wgl-utils"
+  tagline: 常用的工具函数，适用于 JavaScript Runtime
+
   actions:
     - theme: brand
       text: 安装
@@ -15,4 +16,3 @@ hero:
       link: /examples/
 
 ---
-

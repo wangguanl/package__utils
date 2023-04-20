@@ -1,26 +1,26 @@
 # `deepCopy` 深拷贝: Object
 
-## 通用引用
+## 示例
 ```js
 const obj = {
   a: 1,
   b: 2,
   c: [3, 4, {a: 1, b: 2}]
 }
+const copyObj = deepCopy(obj);
 ```
 
 ## `Framework`
 ::: code-group
 
 ```js  [ESModule]
-  import { deepCopy } from 'wgl-utils/es/index.js';
-  // import deepCopy from 'wgl-utils/es/deepCopy.js';
-  const copyObj = deepCopy(obj);
+import { deepCopy } from 'wgl-utils/es/index.js';
+// import deepCopy from 'wgl-utils/es/deepCopy.js';
 ```
 
 ```js  [UMD]
-  import utils from 'wgl-utils';
-  const copyObj = utils.deepCopy(obj);
+import utils from 'wgl-utils';
+const copyObj = utils.deepCopy(obj);
 ```
 
 :::
@@ -31,6 +31,7 @@ const obj = {
 ```html  [ESModule]
 <script type="module">
   import { deepCopy } from 'wgl-utils/es/index.js';
+  // import deepCopy from 'wgl-utils/es/deepCopy.js';
   const copyObj = deepCopy(obj);
 </script>
 ```

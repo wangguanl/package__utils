@@ -1,12 +1,12 @@
 ## Framework
 ::: code-group
 ```js  [ESModule]
-  import { unique, ... } from 'wgl-utils/es/index.js';
-  console.log(unique());
+import { unique, ... } from 'wgl-utils/es/index.js';
+console.log(unique());
 ```
 ```js  [UMD]
-  import utils from 'wgl-utils';
-  console.log(utils.unique());
+import utils from 'wgl-utils';
+console.log(utils.unique());
 ```
 :::
 

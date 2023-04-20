@@ -1,17 +1,17 @@
-# `unique` 创建唯一值: `String`
+# `unique` 创建唯一值
 
 ## `Framework`
 ::: code-group
 
 ```js  [ESModule]
-  import { unique } from 'wgl-utils/es/index.js';
-  // import unique from 'wgl-utils/es/unique.js';
-  console.log(unique());
+import { unique } from 'wgl-utils/es/index.js';
+// import unique from 'wgl-utils/es/unique.js';
+console.log(unique());
 ```
 
 ```js  [UMD]
-  import utils from 'wgl-utils';
-  console.log(utils.unique());
+import utils from 'wgl-utils';
+console.log(utils.unique());
 ```
 
 :::
@@ -22,6 +22,7 @@
 ```html  [ESModule]
 <script type="module">
   import { unique } from 'wgl-utils/es/index.js';
+  // import unique from 'wgl-utils/es/unique.js';
   console.log(unique());
 </script>
 ```
