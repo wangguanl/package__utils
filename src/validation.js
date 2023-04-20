@@ -1,9 +1,5 @@
 /**
  * @overview 根据校验规则校验数据，执行传入的回调函数，返回校验结果
- * @author Mr.Wang
- * @version 1.0
- **/
-/**
  * @method 验证类型
  * @param { Object | required } rules - 校验规则.
  * @param { Array | required } data - 数据.
@@ -11,10 +7,6 @@
  **/
 export default (() => {
   const Rules = {
-    /*
-     * 验证非空验证
-     * 可验证类型： 数组、对象、字符串
-     */
     empty: data =>
       data !== null &&
       data !== undefined &&
@@ -52,15 +44,14 @@ export default (() => {
    * @param { Object | required } data - 数据.
    * @return { Function }
    **/
-  const CacheData =
-    data =>
-    (field, { type, validation, success, error }) => {
-      const pass = validation
-        ? validation(data[field])
-        : Rules[type](data[field]);
-      pass ? success && success() : error && error();
-      return pass;
-    };
+  const CacheData = data => (field, rule) => {
+    const { type, validation, success, error } = rule;
+    const pass = validation
+      ? validation(data[field])
+      : Rules[type](data[field]);
+    pass ? success?.(rule) : error?.(rule);
+    return pass;
+  };
   return (rules, data) => {
     const Validation = CacheData(data);
     for (let field in rules) {
