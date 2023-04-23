@@ -15,11 +15,11 @@ Webpack(webpackUMDConfig, () => {
       Path.resolve(__dirname, '../dist/.npmrc'),
       () => {}
     );
-    FS.cp(
+    /* FS.cp(
       Path.resolve(__dirname, '../src'),
       Path.resolve(__dirname, '../dist/src'),
       { recursive: true },
       () => {}
-    );
+    ); */
   });
 });

@@ -17,29 +17,85 @@
     </script> -->
 
     <script type="module">
-      import { unique, deepMerge } from '../dist/es/index.js';
-      const obj = {
-          a: 1,
-          b: 2,
-          c: [3, 4, { a: 1, b: 2 }],
-          d: {
-            s: 1,
-            d: 2,
-            a: 22,
-          },
+      import { unique, deepMerge, validation } from '../dist/es/index.js';
+      import validation2 from '../dist/es/validation.js';
+      /* const obj = {
+                a: 1,
+                b: 2,
+                c: [3, 4, { a: 1, b: 2 }],
+                d: {
+                  s: 1,
+                  d: 2,
+                  a: 22,
+                },
+              },
+              obj2 = {
+                a: 3,
+                b: 4,
+                c: [5, 6, 7],
+                d: {
+                  s: 4,
+                  d: 6,
+                  q: 2,
+                },
+              };
+            const mergeObj = deepMerge(obj, obj2);
+            console.log(mergeObj); */
+      var form = {
+        colors: {},
+        hidden: 1,
+        lexiconGuarantees: [],
+        lexiconTypes: [],
+        sales: 0,
+      };
+      const rules = {
+        name: {
+          type: 'empty',
+          errMsg: '请输入商品名称！',
         },
-        obj2 = {
-          a: 3,
-          b: 4,
-          c: [5, 6, 7],
-          d: {
-            s: 4,
-            d: 6,
-            q: 2,
+        price: [
+          {
+            type: 'empty',
+            errMsg: '请输入商品价格！',
           },
+          {
+            type: 'money',
+            errMsg: '请输入商品价格！',
+          },
+        ],
+        salesPrice: {
+          type: 'placeholder',
+        },
+        banners: {
+          type: 'empty',
+          errMsg: '请上传商品图片！',
+        },
+        colors: {
+          type: 'empty',
+          errMsg: '请添加商品颜色！',
+        },
+      };
+      if (form.sales) {
+        rules.salesPrice = [
+          {
+            type: 'empty',
+            errMsg: '请输入商品优惠价格！',
+          },
+          {
+            type: 'money',
+            errMsg: '请输入商品优惠价格！',
+          },
+        ];
+      } else {
+        rules.salesPrice = {
+          type: 'placeholder',
         };
-      const mergeObj = deepMerge(obj, obj2);
-      console.log(mergeObj);
+      }
+      console.log(validation);
+      console.log(validation2);
+      console.log(validation === validation2);
+      const validationFlag = validation(rules, form);
+      console.log(validationFlag);
     </script>
   </body>
 </html>

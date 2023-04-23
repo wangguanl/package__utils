@@ -1,0 +1,2 @@
+var e={d:function(t,n){for(var r in n)e.o(n,r)&&!e.o(t,r)&&Object.defineProperty(t,r,{enumerable:!0,get:n[r]})},o:function(e,t){return Object.prototype.hasOwnProperty.call(e,t)}},t={};function n(e,t={},r){const o=e.shift();return e.length?(-1===Object.keys(t).indexOf(o)&&(t[o]={}),n(e,t[o],r)):t[o]=r,t}e.d(t,{Z:function(){return n}});var r=t.Z;export{r as default};
+//# sourceMappingURL=recursionSegments.mjs.map

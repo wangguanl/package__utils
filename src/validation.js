@@ -58,8 +58,10 @@ export default (() => {
       // 多个校验规则
       if (Array.isArray(rules[field])) {
         for (let i = 0; i < rules[field].length; i++) {
-          if (!Validation(field, rules[field][i])) {
-            return rules[field][i];
+          if (rules[field]) {
+            if (!Validation(field, rules[field][i])) {
+              return rules[field][i];
+            }
           }
         }
       } else {

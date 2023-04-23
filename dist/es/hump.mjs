@@ -1,0 +1,2 @@
+var e={d:function(r,t){for(var o in t)e.o(t,o)&&!e.o(r,o)&&Object.defineProperty(r,o,{enumerable:!0,get:t[o]})},o:function(e,r){return Object.prototype.hasOwnProperty.call(e,r)}},r={};e.d(r,{$:function(){return o},S:function(){return t}});const t=(e,r="-")=>e.replace(/([A-Z])/g,`${r}$1`).toLowerCase(),o=e=>e.replace(/-(\w)/g,((e,r)=>r.toUpperCase()));var n=r.S,p=r.$;export{n as humpToSplit,p as splitToHump};
+//# sourceMappingURL=hump.mjs.map

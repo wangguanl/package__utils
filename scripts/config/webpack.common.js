@@ -1,14 +1,13 @@
 const path = require('path');
 const BaseSrc = path.join(__dirname, '../../src/');
-
-
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'production',
-  devtool: false, // 'source-map',
+  devtool: 'source-map', // 'source-map',
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.esm$/,
         include: BaseSrc,
         loader: 'babel-loader',
       },
@@ -18,8 +17,12 @@ module.exports = {
     alias: {
       '@': BaseSrc,
     },
-    extensions: ['.js'],
-    modules: [BaseSrc, 'node_modules', path.join(__dirname, '../../node_modules')],
+    extensions: ['.js', '.esm'],
+    modules: [
+      BaseSrc,
+      'node_modules',
+      path.join(__dirname, '../../node_modules'),
+    ],
   },
   optimization: {
     moduleIds: 'deterministic',
@@ -43,4 +46,8 @@ module.exports = {
       })(),
     ],
   },
+  plugins: [
+    // 清除dist文件夹
+    new CleanWebpackPlugin(),
+  ],
 };

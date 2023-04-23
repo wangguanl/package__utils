@@ -27,7 +27,6 @@ module.exports = merge(commonConfig, {
   })(),
   output: {
     path: path.resolve(__dirname, '../../dist/es/'),
-    filename: '[name].js',
-    clean: false,
+    filename: '[name].mjs',
   },
 });
