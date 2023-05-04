@@ -5,46 +5,41 @@ const path = require('path'),
 const BaseSrc = path.join(__dirname, '../../src/');
 
 // @wang/
-const libraryName = 'W';
+const libraryName = 'Wgl';
 module.exports = merge(commonConfig, {
   mode: 'production',
-  entry: (() => {
-    const entry = {};
+  entry: {
+    main: {
+      import: path.resolve(BaseSrc, 'index.js'),
+      library: {
+        name: libraryName,
+        type: 'umd',
+        umdNamedDefine: true,
+      },
+    },
+  },
+  /* entry: (() => {
+    const libs = {};
     glob.sync('./src/**').forEach(file => {
       const [_, filename] = file.match(/src\\(.*)/) || ['', ''];
       // 只会打包index.js， 其他引入由index同步引入或异步引入
       if (path.extname(file) === '.js') {
         const name = filename.replace('.js', '');
-        entry[name] = {
-          import: path.join(BaseSrc, '../', file),
+        libs[name] = {
+          import: path.resolve(BaseSrc, '../', file),
           library: {
-            name: libraryName + '_' + name,
+            name: name === 'index' ? libraryName : libraryName + '_' + name,
             type: 'umd',
+            umdNamedDefine: true,
           },
         };
       }
     });
-    return {
-      ...entry,
-      'index.umd': {
-        import: path.resolve(BaseSrc, 'index.js'),
-        library: {
-          name: libraryName,
-          type: 'umd',
-          umdNamedDefine: true,
-        },
-      },
-      index: {
-        import: path.resolve(BaseSrc, 'index.js'),
-        library: {
-          name: libraryName,
-          type: 'var',
-        },
-      },
-    };
-  })(),
+    return libs;
+  })(), */
   output: {
     path: path.resolve(__dirname, '../../dist/'),
-    filename: 'libs/[name].min.js',
+    filename: 'main.js',
+    clean: true,
   },
 });

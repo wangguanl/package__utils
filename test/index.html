@@ -7,40 +7,46 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- <script src="../dist/libs/index.umd.js"></script>
     <script>
-      console.log(utils.unique())
-    </script> -->
-    <!-- <script src="../dist/libs/index.min.js"></script>
+      const obj = {
+        a: 1,
+        b: 2,
+        c: [3, 4, { a: 1, b: 2 }],
+      };
+    </script>
+    <script src="../dist/main.js"></script>
     <script>
-      console.log(utils.unique());
-    </script> -->
+      console.log(Wgl);
+      console.log(Wgl.deepCopy(obj));
+    </script>
 
-    <script type="module">
-      import { unique, deepMerge, validation } from '../dist/es/index.js';
-      import validation2 from '../dist/es/validation.js';
-      /* const obj = {
-                a: 1,
-                b: 2,
-                c: [3, 4, { a: 1, b: 2 }],
-                d: {
-                  s: 1,
-                  d: 2,
-                  a: 22,
-                },
-              },
-              obj2 = {
-                a: 3,
-                b: 4,
-                c: [5, 6, 7],
-                d: {
-                  s: 4,
-                  d: 6,
-                  q: 2,
-                },
-              };
-            const mergeObj = deepMerge(obj, obj2);
-            console.log(mergeObj); */
+
+    <!-- <script type="module">
+      import { unique, deepMerge, validation } from '../dist/es/index.mjs';
+      console.log(unique());
+      import validation2 from '../dist/es/validation.mjs';
+      const obj = {
+          a: 1,
+          b: 2,
+          c: [3, 4, { a: 1, b: 2 }],
+          d: {
+            s: 1,
+            d: 2,
+            a: 22,
+          },
+        },
+        obj2 = {
+          a: 3,
+          b: 4,
+          c: [5, 6, 7],
+          d: {
+            s: 4,
+            d: 6,
+            q: 2,
+          },
+        };
+      const mergeObj = deepMerge(obj, obj2);
+      console.log(mergeObj);
       var form = {
         colors: {},
         hidden: 1,
@@ -91,11 +97,8 @@
           type: 'placeholder',
         };
       }
-      console.log(validation);
-      console.log(validation2);
-      console.log(validation === validation2);
       const validationFlag = validation(rules, form);
       console.log(validationFlag);
-    </script>
+    </script> -->
   </body>
 </html>

@@ -1,12 +1,12 @@
 ## Framework
 ::: code-group
 ```js  [ESModule]
-import { unique, ... } from 'wgl-utils/es/index.js';
-console.log(unique());
+import { unique, ... } from 'wgl-utils';
+unique();
 ```
-```js  [UMD]
-import utils from 'wgl-utils';
-console.log(utils.unique());
+```js  [CommonJs]
+const Wgl = require('wgl-utils/umd');
+Wgl.unique();
 ```
 :::
 
@@ -14,42 +14,34 @@ console.log(utils.unique());
 ::: code-group
 ```html  [ESModule]
 <script type="module">
-  import { unique } from 'wgl-utils/es/index.js';
-  console.log(unique());
+  import { unique } from 'wgl-utils/main.mjs';
+  unique();
 </script>
 ```
 ```html  [UMD]
-<script src="wgl-utils/libs/index.umd.js"></script>
+<script src="wgl-utils/main.js"></script>
 <script>
-  console.log(utils.unique())
-</script>
-```
-```html  [var]
-<script src="wgl-utils/libs/index.min.js"></script>
-<script>
-  console.log(utils.unique())
+  Wgl.unique()
 </script>
 ```
 :::
 
 
-
-##  `index.js` 源码
+## Code
 ::: code-group
 
-```js  [src/index.js]
+```js  [源码]
+// src/index.js
 <!-- @include: ../../src/index.js -->
 ```
 
-```js  [dist/es/index.js]
-<!-- @include: ../../dist/es/index.js -->
+```js  [ESModule]
+// dist/main.mjs
+<!-- @include: ../../dist/main.mjs -->
 ```
 
-```js  [dist/libs/index.umd.js]
-<!-- @include: ../../dist/libs/index.umd.js -->
-```
-
-```js  [dist/libs/index.min.js]
-<!-- @include: ../../dist/libs/index.min.js -->
+```js  [UMD]
+// dist/main.js
+<!-- @include: ../../dist/main.js -->
 ```
 :::

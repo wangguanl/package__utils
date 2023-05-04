@@ -15,7 +15,8 @@ module.exports = merge(commonConfig, {
       const [_, filename] = file.match(/src\\(.*)/) || ['', ''];
       // 只会打包index.js， 其他引入由index同步引入或异步引入
       if (path.extname(file) === '.js') {
-        entry[filename.replace('.js', '')] = {
+        const name = filename.replace('.js', '');
+        entry[name === 'index' ? 'main' : 'es/' + name] = {
           import: path.join(BaseSrc, '../', file),
           library: {
             type: 'module',
@@ -26,7 +27,8 @@ module.exports = merge(commonConfig, {
     return entry;
   })(),
   output: {
-    path: path.resolve(__dirname, '../../dist/es/'),
+    path: path.resolve(__dirname, '../../dist/'),
     filename: '[name].mjs',
+    clean: false,
   },
 });

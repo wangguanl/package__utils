@@ -1,54 +1,48 @@
-# `unique` 创建唯一值
+# 创建唯一值
 
-## `Framework`
+## Example
+```js
+const uid = unique()
+```
+
+## Framework
 ::: code-group
-
 ```js  [ESModule]
-import { unique } from 'wgl-utils/es/index.js';
-// import unique from 'wgl-utils/es/unique.js';
-console.log(unique());
+import { unique } from 'wgl-utils';
+// import unique from 'wgl-utils/es/unique.mjs';
 ```
-
-```js  [UMD]
-import utils from 'wgl-utils';
-console.log(utils.unique());
-```
-
 :::
 
-## `Browser`
+
+## Browser
 ::: code-group
 
 ```html  [ESModule]
 <script type="module">
-  import { unique } from 'wgl-utils/es/index.js';
-  // import unique from 'wgl-utils/es/unique.js';
-  console.log(unique());
+  import { unique } from 'wgl-utils/main.mjs';
+  // import unique from 'wgl-utils/es/unique.mjs';
 </script>
 ```
 ```html  [UMD]
-<script src="wgl-utils/libs/index.umd.js"></script>
+<!-- 全量引入 -->
+<script src="wgl-utils/main.js"></script>
 <script>
-  console.log(utils.unique())
-</script>
-```
-```html  [var]
-<script src="wgl-utils/libs/index.min.js"></script>
-<script>
-  console.log(utils.unique())
+  Wgl.unique();
 </script>
 ```
 :::
 
 
-##  `unique.js` 源码
+## Code
 ::: code-group
 
-```js  [src/unique.js]
+```js  [源码]
+// src/unique.js
 <!-- @include: ../../src/unique.js -->
 ```
 
-```js  [dist/es/unique.js]
-<!-- @include: ../../dist/es/unique.js -->
+```js  [ESModule]
+// dist/es/unique.mjs
+<!-- @include: ../../dist/es/unique.mjs -->
 ```
 :::

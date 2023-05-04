@@ -1,6 +1,6 @@
-# `deepCopy` 深拷贝: Object
+# 对象深拷贝
 
-## 示例
+## Example
 ```js
 const obj = {
   a: 1,
@@ -10,54 +10,44 @@ const obj = {
 const copyObj = deepCopy(obj);
 ```
 
-## `Framework`
+## Framework
 ::: code-group
-
 ```js  [ESModule]
-import { deepCopy } from 'wgl-utils/es/index.js';
-// import deepCopy from 'wgl-utils/es/deepCopy.js';
+import { deepCopy } from 'wgl-utils';
+// import deepCopy from 'wgl-utils/es/deepCopy.mjs';
 ```
-
-```js  [UMD]
-import utils from 'wgl-utils';
-const copyObj = utils.deepCopy(obj);
-```
-
 :::
 
-## `Browser`
+
+## Browser
 ::: code-group
 
 ```html  [ESModule]
 <script type="module">
-  import { deepCopy } from 'wgl-utils/es/index.js';
-  // import deepCopy from 'wgl-utils/es/deepCopy.js';
-  const copyObj = deepCopy(obj);
+  import { deepCopy } from 'wgl-utils/main.mjs';
+  // import deepCopy from 'wgl-utils/es/deepCopy.mjs';
 </script>
 ```
 ```html  [UMD]
-<script src="wgl-utils/libs/index.umd.js"></script>
+<!-- 全量引入 -->
+<script src="wgl-utils/main.js"></script>
 <script>
-  const copyObj = utils.deepCopy(obj);
-</script>
-```
-```html  [var]
-<script src="wgl-utils/libs/index.min.js"></script>
-<script>
-  const copyObj = utils.deepCopy(obj);
+  Wgl.deepCopy();
 </script>
 ```
 :::
 
 
-##  `deepCopy.js` 源码
+## Code
 ::: code-group
 
-```js  [src/deepCopy.js]
+```js  [源码]
+// src/deepCopy.js
 <!-- @include: ../../src/deepCopy.js -->
 ```
 
-```js  [dist/es/deepCopy.js]
-<!-- @include: ../../dist/es/deepCopy.js -->
+```js  [ESModule]
+// dist/es/deepCopy.mjs
+<!-- @include: ../../dist/es/deepCopy.mjs -->
 ```
 :::

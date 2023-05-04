@@ -7,7 +7,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.esm$/,
+        test: /\.js$/,
         include: BaseSrc,
         loader: 'babel-loader',
       },
@@ -17,7 +17,7 @@ module.exports = {
     alias: {
       '@': BaseSrc,
     },
-    extensions: ['.js', '.esm'],
+    extensions: ['.js', '.cjs'],
     modules: [
       BaseSrc,
       'node_modules',
@@ -48,6 +48,6 @@ module.exports = {
   },
   plugins: [
     // 清除dist文件夹
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
   ],
 };

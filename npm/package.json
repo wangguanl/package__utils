@@ -1,13 +1,12 @@
 {
   "name": "wgl-utils",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "description": "",
-  "main": "libs/index.umd.js",
-  "module": "es/index.js",
-  "unpack": "libs/index.min.js",
+  "main": "main.mjs",
+  "es": "main.mjs",
+  "umd": "main.js",
   "files": [
-    "es",
-    "libs"
+    "es"
   ],
   "homepage": "https://wangguanl.github.io/page__package-utils/",
   "author": {

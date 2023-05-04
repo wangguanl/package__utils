@@ -1,5 +1,5 @@
-# `debounce` 防抖节流
-## 示例
+# 防抖节流
+## Example
 ```js
 debounce(() => {
   console.log(123)
@@ -9,56 +9,45 @@ throttle(() => {
 }, 200);
 ```
 
-## `Framework`
+## Framework
 ::: code-group
-
 ```js  [ESModule]
-import { debounce, throttle } from 'wgl-utils/es/index.js';
-// import { debounce, throttle } from 'wgl-utils/es/debounce.js';
+import { debounce, throttle } from 'wgl-utils';
+// import { debounce, throttle } from 'wgl-utils/es/debounce.mjs';
 ```
-
-```js  [UMD]
-import utils from 'wgl-utils';
-utils.debounce();
-utils.throttle();
-```
-
 :::
 
-## `Browser`
+## Browser
 ::: code-group
 
 ```html  [ESModule]
 <script type="module">
-  import { debounce, throttle } from 'wgl-utils/es/index.js';
-  // import { debounce, throttle } from 'wgl-utils/es/debounce.js';
+  import { debounce, throttle } from 'wgl-utils/main.mjs';
+  // import { debounce, throttle } from 'wgl-utils/es/debounce.mjs';
 </script>
 ```
 ```html  [UMD]
-<script src="wgl-utils/libs/index.umd.js"></script>
+<!-- 全量引入 -->
+<script src="wgl-utils/main.js"></script>
 <script>
-  utils.debounce();
-  utils.throttle();
-</script>
-```
-```html  [var]
-<script src="wgl-utils/libs/index.min.js"></script>
-<script>
-  utils.debounce();
-  utils.throttle();
+  Wgl.debounce();
+  Wgl.throttle();
 </script>
 ```
 :::
 
 
-##  `debounce.js` 源码
+## Code
 ::: code-group
 
-```js  [src/debounce.js]
+```js  [源码]
+// src/debounce.js
 <!-- @include: ../../src/debounce.js -->
 ```
 
-```js  [dist/es/debounce.js]
-<!-- @include: ../../dist/es/debounce.js -->
+```js  [ESModule]
+// dist/es/debounce.mjs
+<!-- @include: ../../dist/es/debounce.mjs -->
 ```
+
 :::

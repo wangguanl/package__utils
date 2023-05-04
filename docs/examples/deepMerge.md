@@ -1,6 +1,6 @@
-# `deepMerge` 深合并: Object
+# 对象深合并
 
-## 通用引用
+## Example
 ```js
 const obj = {
   a: 1,
@@ -25,53 +25,47 @@ obj2 = {
 const mergeObj = deepMerge(obj, obj2);
 ```
 
-## `Framework`
+
+## Framework
 ::: code-group
-
 ```js  [ESModule]
-import { deepMerge } from 'wgl-utils/es/index.js';
-// import deepMerge from 'wgl-utils/es/deepMerge.js';
+import { deepMerge } from 'wgl-utils';
+// import deepMerge from 'wgl-utils/es/deepMerge.mjs';
 ```
-
-```js  [UMD]
-import utils from 'wgl-utils';
-const mergeObj = utils.deepMerge(obj, obj2);
-```
-
 :::
 
-## `Browser`
+## Browser
 ::: code-group
 
 ```html  [ESModule]
 <script type="module">
-  import { deepMerge } from 'wgl-utils/es/index.js';
+  import { deepMerge } from 'wgl-utils/main.mjs';
+  // import deepMerge from 'wgl-utils/es/deepMerge.mjs';
   const mergeObj = deepMerge(obj,obj2);
 </script>
 ```
 ```html  [UMD]
-<script src="wgl-utils/libs/index.umd.js"></script>
+<!-- 全量引入 -->
+<script src="wgl-utils/main.js"></script>
 <script>
-  const mergeObj = utils.deepMerge(obj, obj2);
-</script>
-```
-```html  [var]
-<script src="wgl-utils/libs/index.min.js"></script>
-<script>
-  const mergeObj = utils.deepMerge(obj, obj2);
+  const mergeObj = Wgl.deepMerge(obj, obj2);
 </script>
 ```
 :::
 
 
-##  `deepMerge.js` 源码
+
+## Code
 ::: code-group
 
-```js  [src/deepMerge.js]
+```js  [源码]
+// src/deepMerge.js
 <!-- @include: ../../src/deepMerge.js -->
 ```
 
-```js  [dist/es/deepMerge.js]
-<!-- @include: ../../dist/es/deepMerge.js -->
+```js  [ESModule]
+// dist/es/deepMerge.mjs
+<!-- @include: ../../dist/es/deepMerge.mjs -->
 ```
 :::
+

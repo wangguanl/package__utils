@@ -1,5 +1,6 @@
-# `verifyVar` 检测类型
-## 示例
+# 检测类型
+
+## Example
 ```js
 /*
   检测类型
@@ -16,55 +17,47 @@ verifyVar({}, 'object'); // true
 
 ```
 
-## `Framework`
+## Framework
 ::: code-group
-
 ```js  [ESModule]
-import { verifyVar } from 'wgl-utils/es/index.js';
-// import verifyVar from 'wgl-utils/es/verifyVar.js';
-verifyVar()
+import { verifyVar } from 'wgl-utils';
+// import verifyVar from 'wgl-utils/es/verifyVar.mjs';
 ```
-
-```js  [UMD]
-import utils from 'wgl-utils';
-utils.verifyVar()
-```
-
 :::
+
 
 ## Browser
 ::: code-group
 
 ```html  [ESModule]
 <script type="module">
-  import { verifyVar } from 'wgl-utils/es/index.js';
-  // import verifyVar from 'wgl-utils/es/verifyVar.js';
-  verifyVar()
+  import { verifyVar } from 'wgl-utils/main.mjs';
+  // import verifyVar from 'wgl-utils/es/verifyVar.mjs';
 </script>
 ```
 ```html  [UMD]
-<script src="wgl-utils/libs/index.umd.js"></script>
+<!-- 全量引入 -->
+<script src="wgl-utils/main.js"></script>
 <script>
-  utils.verifyVar()
-</script>
-```
-```html  [var]
-<script src="wgl-utils/libs/index.min.js"></script>
-<script>
-  utils.verifyVar()
+  Wgl.verifyVar();
 </script>
 ```
 :::
 
 
-##  `verifyVar.js` 源码
+## Code
 ::: code-group
 
-```js  [src/verifyVar.js]
+```js  [源码]
+// src/verifyVar.js
 <!-- @include: ../../src/verifyVar.js -->
 ```
 
-```js  [dist/es/verifyVar.js]
-<!-- @include: ../../dist/es/verifyVar.js -->
+```js  [ESModule]
+// dist/es/verifyVar.mjs
+<!-- @include: ../../dist/es/verifyVar.mjs -->
 ```
 :::
+
+
+

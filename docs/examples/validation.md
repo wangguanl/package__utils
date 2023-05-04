@@ -1,5 +1,6 @@
-# `validation` 校验数据
-## 示例
+# 校验数据
+
+## Example
 ```js
 /**
  * @method 验证类型
@@ -35,55 +36,45 @@ if (flag === true) {
 }
 ```
 
-## `Framework`
+## Framework
 ::: code-group
-
 ```js  [ESModule]
-import { validation } from 'wgl-utils/es/index.js';
-// import validation from 'wgl-utils/es/validation.js';
-console.log(validation());
+import { validation } from 'wgl-utils';
+// import validation from 'wgl-utils/es/validation.mjs';
 ```
-
-```js  [UMD]
-import utils from 'wgl-utils';
-console.log(utils.validation());
-```
-
 :::
 
-## `Browser`
+
+## Browser
 ::: code-group
 
 ```html  [ESModule]
 <script type="module">
-  import { validation } from 'wgl-utils/es/index.js';
-  // import validation from 'wgl-utils/es/validation.js';
-  console.log(validation());
+  import { validation } from 'wgl-utils/main.mjs';
+  // import validation from 'wgl-utils/es/validation.mjs';
 </script>
 ```
 ```html  [UMD]
-<script src="wgl-utils/libs/index.umd.js"></script>
+<!-- 全量引入 -->
+<script src="wgl-utils/main.js"></script>
 <script>
-  console.log(utils.validation())
-</script>
-```
-```html  [var]
-<script src="wgl-utils/libs/index.min.js"></script>
-<script>
-  console.log(utils.validation())
+  Wgl.validation();
 </script>
 ```
 :::
 
 
-##  `validation.js` 源码
+## Code
 ::: code-group
 
-```js  [src/validation.js]
+```js  [源码]
+// src/validation.js
 <!-- @include: ../../src/validation.js -->
 ```
 
-```js  [dist/es/validation.js]
-<!-- @include: ../../dist/es/validation.js -->
+```js  [ESModule]
+// dist/es/validation.mjs
+<!-- @include: ../../dist/es/validation.mjs -->
 ```
 :::
+
