@@ -4,6 +4,7 @@ export { default as validation } from './validation';
 export { default as deepCopy } from './deepCopy';
 export { default as deepMerge } from './deepMerge';
 export { default as recursionSegments } from './recursionSegments';
+export { default as isHtmlTag } from './isHtmlTag';
 export { default as isArrayNested } from './isArrayNested';
 export * from './formatDate';
 export * from './debounce';
