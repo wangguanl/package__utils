@@ -5,7 +5,7 @@ import { unique, ... } from 'wgl-utils';
 unique();
 ```
 ```js  [CommonJs]
-const Wgl = require('wgl-utils/umd');
+const Wgl = require('wgl-utils/main.cjs');
 Wgl.unique();
 ```
 :::
@@ -18,7 +18,7 @@ Wgl.unique();
   unique();
 </script>
 ```
-```html  [UMD]
+```html  [ES5]
 <script src="wgl-utils/main.js"></script>
 <script>
   Wgl.unique()
@@ -40,7 +40,12 @@ Wgl.unique();
 <!-- @include: ../../dist/main.mjs -->
 ```
 
-```js  [UMD]
+```js  [Commonjs]
+// dist/main.js
+<!-- @include: ../../dist/main.cjs -->
+```
+
+```js  [ES5]
 // dist/main.js
 <!-- @include: ../../dist/main.js -->
 ```

@@ -23,6 +23,10 @@ verifyVar({}, 'object'); // true
 import { verifyVar } from 'wgl-utils';
 // import verifyVar from 'wgl-utils/es/verifyVar.mjs';
 ```
+```js  [CommonJs]
+const Wgl = require('wgl-utils/main.cjs');
+Wgl.verifyVar();
+```
 :::
 
 
@@ -35,7 +39,7 @@ import { verifyVar } from 'wgl-utils';
   // import verifyVar from 'wgl-utils/es/verifyVar.mjs';
 </script>
 ```
-```html  [UMD]
+```html  [ES5]
 <!-- 全量引入 -->
 <script src="wgl-utils/main.js"></script>
 <script>

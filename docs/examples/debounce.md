@@ -15,6 +15,11 @@ throttle(() => {
 import { debounce, throttle } from 'wgl-utils';
 // import { debounce, throttle } from 'wgl-utils/es/debounce.mjs';
 ```
+```js  [CommonJs]
+const Wgl = require('wgl-utils/main.cjs');
+Wgl.debounce();
+Wgl.throttle();
+```
 :::
 
 ## Browser
@@ -26,7 +31,7 @@ import { debounce, throttle } from 'wgl-utils';
   // import { debounce, throttle } from 'wgl-utils/es/debounce.mjs';
 </script>
 ```
-```html  [UMD]
+```html  [ES5]
 <!-- 全量引入 -->
 <script src="wgl-utils/main.js"></script>
 <script>

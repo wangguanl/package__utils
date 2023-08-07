@@ -1,12 +1,16 @@
 {
   "name": "wgl-utils",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "",
   "main": "main.mjs",
-  "es": "main.mjs",
-  "umd": "main.js",
+  "module": "main.mjs",
+  "es5": "main.js",
+  "node": "main.cjs",
   "files": [
-    "es"
+    "es",
+    "main.mjs",
+    "main.cjs",
+    "main.js"
   ],
   "homepage": "https://wangguanl.github.io/page__package-utils/",
   "author": {

@@ -42,6 +42,10 @@ if (flag === true) {
 import { validation } from 'wgl-utils';
 // import validation from 'wgl-utils/es/validation.mjs';
 ```
+```js  [CommonJs]
+const Wgl = require('wgl-utils/main.cjs');
+Wgl.validation();
+```
 :::
 
 
@@ -54,7 +58,7 @@ import { validation } from 'wgl-utils';
   // import validation from 'wgl-utils/es/validation.mjs';
 </script>
 ```
-```html  [UMD]
+```html  [ES5]
 <!-- 全量引入 -->
 <script src="wgl-utils/main.js"></script>
 <script>

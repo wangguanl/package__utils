@@ -11,6 +11,10 @@ const uid = unique()
 import { unique } from 'wgl-utils';
 // import unique from 'wgl-utils/es/unique.mjs';
 ```
+```js  [CommonJs]
+const Wgl = require('wgl-utils/main.cjs');
+Wgl.unique();
+```
 :::
 
 
@@ -23,7 +27,7 @@ import { unique } from 'wgl-utils';
   // import unique from 'wgl-utils/es/unique.mjs';
 </script>
 ```
-```html  [UMD]
+```html  [ES5]
 <!-- 全量引入 -->
 <script src="wgl-utils/main.js"></script>
 <script>

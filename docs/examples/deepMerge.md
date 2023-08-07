@@ -32,6 +32,10 @@ const mergeObj = deepMerge(obj, obj2);
 import { deepMerge } from 'wgl-utils';
 // import deepMerge from 'wgl-utils/es/deepMerge.mjs';
 ```
+```js  [CommonJs]
+const Wgl = require('wgl-utils/main.cjs');
+Wgl.deepMerge();
+```
 :::
 
 ## Browser
@@ -44,7 +48,7 @@ import { deepMerge } from 'wgl-utils';
   const mergeObj = deepMerge(obj,obj2);
 </script>
 ```
-```html  [UMD]
+```html  [ES5]
 <!-- 全量引入 -->
 <script src="wgl-utils/main.js"></script>
 <script>

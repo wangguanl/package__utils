@@ -16,6 +16,10 @@ const copyObj = deepCopy(obj);
 import { deepCopy } from 'wgl-utils';
 // import deepCopy from 'wgl-utils/es/deepCopy.mjs';
 ```
+```js  [CommonJs]
+const Wgl = require('wgl-utils/main.cjs');
+Wgl.deepCopy();
+```
 :::
 
 
@@ -28,7 +32,7 @@ import { deepCopy } from 'wgl-utils';
   // import deepCopy from 'wgl-utils/es/deepCopy.mjs';
 </script>
 ```
-```html  [UMD]
+```html  [ES5]
 <!-- 全量引入 -->
 <script src="wgl-utils/main.js"></script>
 <script>

@@ -1,6 +1,5 @@
 const path = require('path');
 const BaseSrc = path.join(__dirname, '../../src/');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'production',
   devtool: 'source-map', // 'source-map',
@@ -46,8 +45,4 @@ module.exports = {
       })(),
     ],
   },
-  plugins: [
-    // 清除dist文件夹
-    // new CleanWebpackPlugin(),
-  ],
 };
