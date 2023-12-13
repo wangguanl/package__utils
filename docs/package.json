@@ -7,6 +7,10 @@
   "type": "module",
   "devDependencies": {
     "fast-glob": "^3.2.12",
-    "vitepress": "1.0.0-alpha.60"
-  }
+    "vitepress": "1.0.0-rc.31"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "ISC"
 }
