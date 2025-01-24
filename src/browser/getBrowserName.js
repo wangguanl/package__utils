@@ -1,5 +1,5 @@
 // 获取浏览器名称
-const getBrowserName = () => {
+export default function getBrowserName() {
   const userAgent = window.navigator.userAgent;
   const browsers = {
     chrome: /chrome/i,
@@ -28,8 +28,4 @@ const getBrowserName = () => {
     }
   }
   return 'unknown';
-};
-// Execute the above code in chrome browser
-console.log(getBrowserName()); // chrome
-// Execute the above code in safari browser
-console.log(getBrowserName()); // safari
+}
